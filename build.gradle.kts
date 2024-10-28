@@ -2,6 +2,7 @@ plugins {
     id("org.springframework.boot") version "3.3.4"
     id("io.spring.dependency-management") version "1.1.6"
     id("org.jmailen.kotlinter") version "4.4.1"
+    id("com.google.cloud.tools.jib") version "3.4.4"
 
     val kotlinVersion = "1.9.25"
     kotlin("jvm") version kotlinVersion
@@ -31,7 +32,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     // Postgresql
-    runtimeOnly("org.postgresql:postgresql")
+    implementation("com.h2database:h2")
 
     // QueryDSL
     val querydslVersion = "5.0.0"
@@ -65,4 +66,10 @@ allOpen {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+jib {
+    from {
+        image = "amazoncorretto:21"
+    }
 }

@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  variables:
+    REPOSITORY_URI: "354918373096.dkr.ecr.ap-northeast-2.amazonaws.com/ecs-example"
+    TAGS: "latest"
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws sts get-caller-identity
+  build:
+    commands:
+      - echo Building and pushing the image with Jib using Gradle...
+      - ./gradlew clean jib --image=$REPOSITORY_URI:$TAGS
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
