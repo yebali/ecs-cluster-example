@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - printf '[{"name":"ecs-example","imageUri":"%s"}]' $REPOSITORY_URL:$TAGS > imagedefinitions.json
+      - printf '[{"name":"ecs-example","imageUri":"%s"}]' $REPOSITORY_URI:$TAGS > imagedefinitions.json
 
 artifacts:
   files:
