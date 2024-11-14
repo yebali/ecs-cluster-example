@@ -6,18 +6,16 @@
     {
       "name": "ecs-example",
       "image": "",
-      "cpu": 0,
-      "memory": 1024,
+      "cpu": 1024,
+      "memory": 2048,
       "portMappings": [
         {
-          "name": "ecs-example-8080-tcp",
           "containerPort": 8080,
           "hostPort": 8080,
           "protocol": "tcp",
           "appProtocol": "http"
         },
         {
-          "name": "ecs-example-8081-tcp",
           "containerPort": 8081,
           "hostPort": 8081,
           "protocol": "tcp",
@@ -43,8 +41,8 @@
       "systemControls": []
     }
   ],
-  "cpu": "512",
-  "memory": "1024",
+  "cpu": "1024",
+  "memory": "2048",
   "requiresCompatibilities": [
     "FARGATE"
   ],
