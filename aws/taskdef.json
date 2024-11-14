@@ -5,17 +5,19 @@
   "containerDefinitions": [
     {
       "name": "ecs-example",
-      "image": "<IMAGE_PLACEHOLDER>",
+      "image": "",
       "cpu": 0,
       "memory": 1024,
       "portMappings": [
         {
+          "name": "ecs-example-8080-tcp",
           "containerPort": 8080,
           "hostPort": 8080,
           "protocol": "tcp",
           "appProtocol": "http"
         },
         {
+          "name": "ecs-example-8081-tcp",
           "containerPort": 8081,
           "hostPort": 8081,
           "protocol": "tcp",
