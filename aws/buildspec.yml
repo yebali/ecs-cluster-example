@@ -22,3 +22,4 @@ artifacts:
   files:
     - imagedefinitions.json
     - aws/taskdef.json
+  discard-paths: yes
